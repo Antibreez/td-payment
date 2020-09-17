@@ -5,13 +5,14 @@
 
   background-color: $color-1;
   color: $color-2;
+  border-radius: 11px;
 
   &__bill {
     margin: 0;
 
     font-weight: 500;
-    font-size: 56px;
-    line-height: 84px;
+    font-size: 44px;
+    line-height: 49px;
     text-align: center;
   }
 
@@ -64,7 +65,7 @@
 
     &:focus {
       outline: none;
-      border: 1px solid #ccaa66;
+      border: 1px solid $color-1;
     }
 
     &::-webkit-input-placeholder {
@@ -140,7 +141,7 @@
 
     &:hover::before {
       cursor: pointer;
-      border-color: #ccaa66;
+      border-color: $color-1;
     }
 
     &.js--error::before {
@@ -149,7 +150,7 @@
   }
 
   & input[name="agreement"]:focus + div label::before {
-    border-color: #ccaa66;
+    border-color: $color-1;
   }
 
   &__agreement-link {
@@ -200,31 +201,31 @@
     width: 10px;
     height: 10px;
 
-    background-color: #ccaa66;
+    background-color: $color-1;
     border-radius: 50%;
   }
 
   &__payment-type:focus + label::before {
-    border: 1px solid #ccaa66;
+    border: 1px solid $color-1;
   }
 
   &__payment-type:hover + label::before {
-    border: 1px solid #ccaa66;
+    border: 1px solid $color-1;
   }
 
   &__submit {
     display: block;
-    height: 48px;
+    height: 35px;
     padding: 0 40px;
     margin: 60px auto 0;
 
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 15px;
     color: #fff;
 
-    border: none;
-    background-color: #ccaa66;
+    border: 2px solid #ccc;
+    background-color: transparent;
 
     &:hover {
       opacity: 0.9;

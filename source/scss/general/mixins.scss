@@ -34,17 +34,29 @@
 }
 
 // ШРИФТЫ
+// @mixin font-face($name, $filename, $weight) {
+//   @font-face {
+//     font-family: $name;
+//     font-weight: $weight;
+//     font-style: normal;
+//     font-display: swap;
+//     src:
+//       url("../fonts/"+$filename+".woff") format("woff");
+//   }
+// }
+
+/* pt-sans-narrow-regular - latin_cyrillic */
 @mixin font-face($name, $filename, $weight) {
   @font-face {
     font-family: $name;
-    font-weight: $weight;
     font-style: normal;
+    font-weight: $weight;
     font-display: swap;
-    src:
-      url("../fonts/"+$filename+".woff") format("woff");
+    src: local('PT Sans Narrow'), local('PTSans-Narrow'),
+         url('../fonts/' + $filename + '.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/' + $filename + '.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 }
-
 
 @mixin section-title {
   // margin: 0;
