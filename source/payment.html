@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Оплата счета</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.min.css" type="text/css">
+</head>
+
+<body class="payment-page">
+  <main>
+    <form class="payment-form">
+      <h2 class="payment-form__bill">Счёт <b>&#8470;</b><span>12464/D-20</span></h2>
+      <p class="payment-form__price">на сумму <span>4327543.18</span>&nbsp;&#8381;</p>
+      <p class="payment-form__instruction">
+        Введите свои ФИО, номер телефона и E-mail для продолжения оплаты
+      </p>
+      <label class="payment-form__label" for="surname">Фамилия</label>
+      <input class="payment-form__input" type="text" name="surname" id="surname" placeholder="Иванов">
+      <label class="payment-form__label" for="name">Имя</label>
+      <input class="payment-form__input" type="text" name="name" id="name" placeholder="Иван">
+      <label class="payment-form__label" for="patronymic">Отчество</label>
+      <input class="payment-form__input" type="text" name="patronymic" id="patronymic" placeholder="Иванович">
+      <label class="payment-form__label" for="phone">Номер телефона</label>
+      <input class="payment-form__input" type="text" name="phone" id="phone" placeholder="+7(___)___-__-__">
+      <label class="payment-form__label" for="email">E-mail</label>
+      <input class="payment-form__input" type="email" name="email" id="email" placeholder="my@mail.com">
+      <div class="payment-form__agreement-wrapper">
+        <input class="visually-hidden" type="checkbox" name="agreement" id="agreement">
+        <div class="payment-form__text-wrapper">
+          <label for="agreement">Я согласен с</label>
+          <a class="payment-form__agreement-link" href="#">обработкой персональных данных</a>
+        </div>
+      </div>
+      <input class="visually-hidden  payment-form__payment-type" type="radio" name="payment-type" value="card" id="card" checked>
+      <label class="payment-form__radio" for="card">Оплата по карте</label>
+
+
+      <input class="visually-hidden  payment-form__payment-type" type="radio" name="payment-type" value="other" id="other">
+      <label class="payment-form__radio" for="other">Другие способы оплаты</label>
+
+      <button class="payment-form__submit" type="submit" disabled>Оплатить</button>
+
+      <div style="text-align: right; margin-top: 35px; background-color: #fff; padding: 15px 20px 10px;">
+        <img src="img/visa.png" style="height: 25px;">
+        <img src="img/mastercard.png" style="height: 25px;">
+        <img src="img/maestro.png" style="height: 25px;">
+        <img src="img/mir.png" style="height: 25px;">
+        <a style="border-width: 0;" href="https://www.webmoney.ru/rus/developers/logos.shtml" target="_blank"><img src="img/webmoney.png" style="height: 25px; border-width:0;"></a>
+        <a style="border-width: 0;" href="https://money.yandex.ru" target="_blank"><img alt="Я принимаю Яндекс.Деньги" title="Я принимаю Яндекс.Деньги" src="img/yandex.png" style="height: 25px; border-width:0;"></a>
+        <img src="img/apple.png" style="height: 25px;">
+    </div>
+    </form>
+  </main>
+  <script src="js/vendor.min.js"></script>
+  <script src="js/script.min.js"></script>
+</body>
+</html>

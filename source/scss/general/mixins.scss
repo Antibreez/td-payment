@@ -1,0 +1,139 @@
+//РАЗРЕШЕНИЯ
+// Меньше 1600
+@mixin desktop {
+  @media (max-width: $width-desktop-large - 1px) {
+    @content;
+  }
+}
+
+// Меньше 1024
+@mixin tablet {
+  @media (max-width: $width-desktop - 1px) {
+    @content;
+  }
+}
+
+// Меньше 768
+@mixin mobile {
+  @media (max-width: $width-tablet - 1px) {
+    @content;
+  }
+}
+
+// СБРОС СТИЛЕЙ
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+// ШРИФТЫ
+@mixin font-face($name, $filename, $weight) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+    src:
+      url("../fonts/"+$filename+".woff") format("woff");
+  }
+}
+
+
+@mixin section-title {
+  // margin: 0;
+
+  // font-weight: 300;
+  // font-size: 24px;
+  // line-height: 32px;
+  // text-align: center;
+
+  margin: 0;
+
+  font-weight: 100;
+  font-size: 38px;
+  line-height: 44px;
+  color: #000;
+  text-align: center;
+
+  @media (max-width: 1599px) {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  @include tablet {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  @include mobile {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
+@mixin desc-font {
+  margin: 0;
+
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000;
+
+  @media (max-width: 1599px) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  @include tablet {
+    font-size: 20px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+// РЕТИНА
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// КОНТЕЙНЕР
+@mixin container {
+  margin: 0 auto;
+  max-width: 1600px;
+  padding-left: 96px;
+  padding-right: 96px;
+
+  @include desktop {
+    max-width: 1024px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include tablet {
+    padding-left: 3.2%;
+    padding-right: 3.2%;
+  }
+
+  @include mobile {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+//ПЛАНВНЫЙ ХОВЕР
+@mixin transition($duration: 0.2s) {
+  transition: all $duration ease;
+}

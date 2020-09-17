@@ -1,0 +1,296 @@
+.payment-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px;
+
+  background-color: $color-1;
+  color: $color-2;
+
+  &__bill {
+    margin: 0;
+
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 84px;
+    text-align: center;
+  }
+
+  &__bill span {
+    white-space: nowrap;
+  }
+
+  &__price {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__instruction {
+    margin: 0;
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 22px;
+    color: #fff;
+  }
+
+  &__input {
+    width: 100%;
+    height: 48px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+
+    color: #000;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #ccaa66;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #ccc;
+      opacity: 1;
+    }
+
+    &::-moz-placeholder {
+      color: #ccc;
+      opacity: 1;
+    }
+
+    &:-moz-placeholder {
+      color: #ccc;
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+      color: #ccc;
+      opacity: 1;
+    }
+  }
+
+  &__agreement-wrapper {
+    padding-left: 33px;
+    margin-bottom: 20px;
+  }
+
+  &__agreement-wrapper input:checked + .payment-form__text-wrapper label::before {
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/icon_checked.svg");
+    background-repeat: no-repeat;
+    background-position: top 50% left 50%;
+  }
+
+  &__text-wrapper {
+    position: relative;
+
+    padding-top: 3px;
+
+    font-size: 14px;
+    line-height: 15px;
+    color: #fff;
+
+    &.js--error {
+      color: #ff0000;
+    }
+  }
+
+  &__text-wrapper label {
+    font-weight: 400;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: -33px;
+
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+
+      border-radius: 2px;
+      border: 1px solid #dddddd;
+      background-color: #ffffff;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover::before {
+      cursor: pointer;
+      border-color: #ccaa66;
+    }
+
+    &.js--error::before {
+      border-color: #ff0000;
+    }
+  }
+
+  & input[name="agreement"]:focus + div label::before {
+    border-color: #ccaa66;
+  }
+
+  &__agreement-link {
+    font-weight: 400;
+    color: inherit;
+  }
+
+  &__radio {
+    position: relative;
+
+    display: block;
+    height: 20px;
+    padding-left: 33px;
+    padding-top: 4px;
+    margin-bottom: 15px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: #fff;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      height: 20px;
+      width: 20px;
+
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__payment-type:checked + label::after {
+    content: "";
+
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: #ccaa66;
+    border-radius: 50%;
+  }
+
+  &__payment-type:focus + label::before {
+    border: 1px solid #ccaa66;
+  }
+
+  &__payment-type:hover + label::before {
+    border: 1px solid #ccaa66;
+  }
+
+  &__submit {
+    display: block;
+    height: 48px;
+    padding: 0 40px;
+    margin: 60px auto 0;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: #fff;
+
+    border: none;
+    background-color: #ccaa66;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+
+    &:not(:disabled):hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.payment-form input:not([type=checkbox]):not([type=radio]),
+.payment-form textarea,
+.payment-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.payment-form input::-ms-clear {
+  display: none;
+}
+
+.payment-form input:-moz-focusring {
+  outline: none;
+  border-color: #00adef;
+  box-shadow: none;
+}
+
+.payment-form input:invalid {
+  outline: none;
+  box-shadow: none;
+}
+
+@include mobile {
+  .payment-form {
+    max-width: 100%;
+    padding: 50px 5%;
+
+    &__bill {
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    &__price {
+      font-size: 30px;
+      line-height: 45px;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .payment-form {
+
+    &__bill {
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    &__price {
+      font-size: 30px;
+      line-height: 45px;
+    }
+  }
+}
