@@ -239,6 +239,16 @@
       cursor: pointer;
     }
   }
+
+  &__types-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__types-block img {
+    margin: 10px 0;
+  }
 }
 
 .payment-form input:not([type=checkbox]):not([type=radio]),
@@ -268,6 +278,8 @@
   .payment-form {
     max-width: 100%;
     padding: 50px 5%;
+
+    border-radius: 0;
 
     &__bill {
       font-size: 32px;

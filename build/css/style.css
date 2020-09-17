@@ -632,6 +632,21 @@ template {
   cursor: pointer;
 }
 
+.payment-form__types-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.payment-form__types-block img {
+  margin: 10px 0;
+}
+
 .payment-form input:not([type=checkbox]):not([type=radio]),
 .payment-form textarea,
 .payment-form select {
@@ -660,6 +675,7 @@ template {
   .payment-form {
     max-width: 100%;
     padding: 50px 5%;
+    border-radius: 0;
   }
   .payment-form__bill {
     font-size: 32px;
